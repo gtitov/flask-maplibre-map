@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title></title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
+  <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <title>Качество городской среды</title>
+</head>
+
+<body>
+  <div id='map'></div>
+
+  <div id="year-select-container">
+    <p class="text-center">Год</p>
+    <select id="year-selector">
+      <option value="2020" selected>2020</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+    </select>
+  </div>
+
+  <dialog id="city-details-modal" onmousedown="this.close()"></dialog>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
