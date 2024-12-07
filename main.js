@@ -46,6 +46,14 @@ map.on("load", () => {
         }
     });
 
+    document.getElementById("year-selector").addEventListener(
+        'change',
+        (e) => {
+            const year = e.target.value
+            map.getSource('cities').setData(`http://localhost:5000/cities/${year}`)
+        }
+    )
+
     map.on('click', 'cities-layer', (e) => {
         console.log(e.features[0].properties.id)
         fetch(`http://localhost:5000/city/${e.features[0].properties.id}`)
@@ -74,11 +82,6 @@ map.on("load", () => {
     map.on('mouseleave', 'cities-layer', () => {
         map.getCanvas().style.cursor = '';
     });
-
-    document.getElementById("year-selector").addEventListener(
-        'change',
-        (e) => { map.getSource('cities').setData(`http://localhost:5000/cities/${e.target.value}`) }
-    )
 })
 
 
