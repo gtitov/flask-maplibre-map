@@ -6,9 +6,3 @@
     right: 0;
     z-index: -1;
 }
-
-#year-select-container {
-    position: absolute;
-    top: 20px;
-    right: 30px
-}

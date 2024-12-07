@@ -14,9 +14,9 @@ def cities_by_year(year):
     start_time = time.time()
     db = sqlite3.connect(DB_LOCATION)
     db.row_factory = sqlite3.Row
-    cur = db.execute("SELECT * FROM cities WHERE year = ?", (year,))
-    cities = cur.fetchall()
-    cur.close()
+    cursor = db.execute("SELECT * FROM cities WHERE year = ?", (year,))
+    cities = cursor.fetchall()
+    cursor.close()
     db.close()
     geojson = {
         "type": "FeatureCollection",
@@ -35,9 +35,7 @@ def cities_by_year(year):
     r = Response(
         json.dumps(geojson, ensure_ascii=False),
         mimetype="text/json",
-        headers={
-            "Access-Control-Allow-Origin": "*",
-        },
+        headers={"Access-Control-Allow-Origin": "*"}
     )
     print("--- %s seconds ---" % (time.time() - start_time))
     return r
@@ -48,16 +46,14 @@ def city_by_id(id):
     start_time = time.time()
     db = sqlite3.connect(DB_LOCATION)
     db.row_factory = sqlite3.Row
-    cur = db.execute("SELECT * FROM cities WHERE id = ?", (id,))
-    city = cur.fetchone()
-    cur.close()
+    cursor = db.execute("SELECT * FROM cities WHERE id = ?", (id,))
+    city = cursor.fetchone()
+    cursor.close()
     db.close()
     r = Response(
         json.dumps(dict(city), ensure_ascii=False),
         mimetype="text/json",
-        headers={
-            "Access-Control-Allow-Origin": "*",
-        },
+        headers={"Access-Control-Allow-Origin": "*"}
     )
     print("--- %s seconds ---" % (time.time() - start_time))
     return r

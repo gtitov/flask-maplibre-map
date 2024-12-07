@@ -67,11 +67,11 @@ map.on("load", () => {
             })
     })
 
-    map.on('mouseenter', 'cities-layer', function () {
+    map.on('mouseenter', 'cities-layer', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
 
-    map.on('mouseleave', 'cities-layer', function () {
+    map.on('mouseleave', 'cities-layer', () => {
         map.getCanvas().style.cursor = '';
     });
 
