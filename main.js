@@ -9,7 +9,8 @@ const map = new maplibregl.Map({
 map.on("load", () => {
     map.addSource('cities', {
         type: 'geojson',
-        data: "https://ghermant.pythonanywhere.com/cities/2020"
+        data: "https://ghermant.pythonanywhere.com/cities/2020",
+        attribution: "индекс-городов.рф"
     });
 
     map.addLayer({
