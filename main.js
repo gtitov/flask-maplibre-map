@@ -9,7 +9,8 @@ const map = new maplibregl.Map({
 map.on("load", () => {
     map.addSource('cities', {
         type: 'geojson',
-        data: "http://localhost:5000/cities/2020"
+        data: "http://localhost:5000/cities/2020",
+        attribution: "индекс-городов.рф"
     });
 
     map.addLayer({
