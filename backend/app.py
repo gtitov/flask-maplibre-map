@@ -6,7 +6,7 @@ import time
 
 app = Flask(__name__)
 
-DB_LOCATION = "cities_index.sqlite"
+DB_LOCATION = "/home/ghermant/flask-maplibre-map/backend/cities_index.sqlite"
 
 
 @app.route("/cities/<year>")
