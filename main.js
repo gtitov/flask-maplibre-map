@@ -9,7 +9,7 @@ const map = new maplibregl.Map({
 map.on("load", () => {
     map.addSource('cities', {
         type: 'geojson',
-        data: "http://localhost:5000/cities/2020"
+        data: "https://ghermant.pythonanywhere.com/cities/2020"
     });
 
     map.addLayer({
@@ -50,13 +50,13 @@ map.on("load", () => {
         'change',
         (e) => {
             const year = e.target.value
-            map.getSource('cities').setData(`http://localhost:5000/cities/${year}`)
+            map.getSource('cities').setData(`https://ghermant.pythonanywhere.com/cities/${year}`)
         }
     )
 
     map.on('click', 'cities-layer', (e) => {
         console.log(e.features[0].properties.id)
-        fetch(`http://localhost:5000/city/${e.features[0].properties.id}`)
+        fetch(`https://ghermant.pythonanywhere.com/city/${e.features[0].properties.id}`)
             .then(response => response.json())
             .then(cityProperties => {
                 console.log(cityProperties)
