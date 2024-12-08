@@ -1,11 +1,14 @@
 from flask import Flask, Response
+from flask_compress import Compress
 import sqlite3
 import json
 import time
 
 
 app = Flask(__name__)
+Compress(app)
 
+# DB_LOCATION = "cities_index.sqlite"
 DB_LOCATION = "/home/ghermant/flask-maplibre-map/backend/cities_index.sqlite"
 
 
