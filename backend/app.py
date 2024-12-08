@@ -34,7 +34,7 @@ def cities_by_year(year):
     }
     r = Response(
         json.dumps(geojson, ensure_ascii=False),
-        mimetype="text/json",
+        mimetype="application/json",
         headers={"Access-Control-Allow-Origin": "*"}
     )
     print("--- %s seconds ---" % (time.time() - start_time))
@@ -52,7 +52,7 @@ def city_by_id(id):
     db.close()
     r = Response(
         json.dumps(dict(city), ensure_ascii=False),
-        mimetype="text/json",
+        mimetype="application/json",
         headers={"Access-Control-Allow-Origin": "*"}
     )
     print("--- %s seconds ---" % (time.time() - start_time))
