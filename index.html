@@ -4,7 +4,6 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
   <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="style.css">
   <title>Качество городской среды</title>
@@ -12,7 +11,7 @@
 
 <body>
   <div id='map'></div>
-  
+
   <div>
     <p>Год</p>
     <select id="year-selector">
@@ -21,10 +20,10 @@
       <option value="2018">2018</option>
     </select>
   </div>
-  
+
   <dialog id="city-details-modal" onmousedown="this.close()"></dialog>
-  
-  <script src="main.js"></script>
+
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
